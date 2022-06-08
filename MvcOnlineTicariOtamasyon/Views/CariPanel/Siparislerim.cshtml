@@ -1,0 +1,35 @@
+﻿@using MvcOnlineTicariOtamasyon.Models.siniflar
+@model List<SatisHareket>
+@{
+    ViewBag.Title = "Siparislerim";
+    Layout = "~/Views/Shared/_cariLayout.cshtml";
+}
+<br />
+
+<h2>Siparis Gecmisim</h2>
+<br />
+
+<table class="table table-hover">
+    <tr>
+        <th>Urun adi</th>
+        <th>Fiyat</th>
+        <th>Tarih</th>
+    </tr>
+
+    @foreach (var x in Model)
+    {
+
+        <tr>
+            <td>@x.Urun.UrunAd</td>
+            <td>@x.Fiyat</td>
+            <td>@x.Tarih</td>
+            <td>@x.Urun.UrunGorsel</td>
+        </tr>
+
+
+    }
+
+
+</table>
+
+<button class="btn btn-dark">Bilgilerimi guncelle</button>

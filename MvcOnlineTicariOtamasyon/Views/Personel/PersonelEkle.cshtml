@@ -1,0 +1,28 @@
+﻿@model MvcOnlineTicariOtamasyon.Models.siniflar.Personel
+@{
+    ViewBag.Title = "PersonelEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>PersonelEkle</h2>
+@using (Html.BeginForm("PersonelEkle", "Personel", FormMethod.Post ,new { enctype = "multipart/form-data" })) { 
+    <form method="post">
+        @Html.LabelFor(x => x.PersonelAd)
+        @Html.TextBoxFor(x => x.PersonelAd, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.PersonelSoyad)
+        @Html.TextBoxFor(x => x.PersonelSoyad, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.PersonelGorsel)<br />
+        @*@Html.TextBoxFor(x => x.PersonelGorsel, new { @class = "form-control" })*@
+        <input type="file" name="PersonelGorsel" />
+        <br /><br />
+        @Html.LabelFor(x => x.Departmanlar)
+        @Html.DropDownListFor(x => x.PersonelID, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+
+        <br />
+        <button class=" btn btn-dark">
+            Kaydet
+        </button>
+
+    </form>}

@@ -1,0 +1,38 @@
+﻿@model MvcOnlineTicariOtamasyon.Models.siniflar.Faturalar
+@{
+    ViewBag.Title = "FaturaGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>FaturaGetir</h2>
+
+<br />
+<h2>CariGetir</h2>
+<br />
+@using (Html.BeginForm("FaturaGuncelle", "Fatura", FormMethod.Post))
+{
+
+
+    <div class="form-group">
+        @Html.HiddenFor(x => x.FaturaID)<br />
+        @Html.LabelFor(x => x.FaturaSeriNO)<br />
+        @Html.TextBoxFor(x => x.FaturaSeriNO, new { @class = "form-control" })
+        @Html.LabelFor(x => x.FaturaSiraNO)<br />
+        @Html.TextBoxFor(x => x.FaturaSiraNO, new { @class = "form-control" })
+        @Html.LabelFor(x => x.VergiDairesi)<br />
+        @Html.TextBoxFor(x => x.VergiDairesi, new { @class = "form-control" })
+        @Html.LabelFor(x => x.Tarih)<br />
+        @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+        @Html.LabelFor(x => x.TeslimEden)<br />
+        @Html.TextBoxFor(x => x.TeslimEden, new { @class = "form-control" })  
+        @Html.LabelFor(x => x.TeslimAlan)<br />
+        @Html.TextBoxFor(x => x.TeslimAlan, new { @class = "form-control" })
+
+
+
+    </div>
+    <button class="btn-primary">Guncelle</button>
+
+
+
+}

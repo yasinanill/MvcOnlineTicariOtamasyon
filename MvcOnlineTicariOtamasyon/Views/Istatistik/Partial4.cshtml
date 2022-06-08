@@ -1,0 +1,57 @@
+﻿@model IEnumerable<MvcOnlineTicariOtamasyon.Models.siniflar.SinifGrup3>
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">MArka Tablosu</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body p-0">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th style="width: 10px">#</th>
+                    <th>Task</th>
+                    <th>Progress</th>
+                    <th style="width: 40px">Toplam</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                @{int sirano = 0; }
+                @foreach (var x in Model)
+                {
+                    <tr>
+                        <td>@{sirano++;} @sirano</td>
+                        <td>@x.marka</td>
+                        <td>
+                            @if (x.sayi >= 1 && x.sayi<=3)
+                            {
+                                <div class="progress progress-xs">
+                                    <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
+                                </div>
+
+                            }
+                            @if (x.sayi >= 3 && x.sayi <= 4)
+                            {
+                                <div class="progress progress-xs progress-striped active">
+                                    <div class="progress-bar bg-primary" style="width: 30%"></div>
+                                </div>
+
+                            }
+                            @if (x.sayi >= 4 && x.sayi <= 5)
+                            {
+                                <div class="progress progress-xs">
+                                    <div class="progress-bar bg-warning" style="width: 70%"></div>
+                                </div>
+
+                            }
+                        </td>
+                        <td><span class="badge bg-danger">@x.sayi</span></td>
+                    </tr>
+                }
+            
+
+            </tbody>
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>
